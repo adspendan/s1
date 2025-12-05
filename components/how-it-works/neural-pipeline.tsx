@@ -107,7 +107,7 @@ export function NeuralPipeline() {
                             key={step.id}
                             className={cn(
                                 "relative flex flex-col items-center text-center group transition-all duration-500",
-                                isActive ? "scale-105 z-20" : "opacity-60 hover:opacity-100 hover:scale-100 z-10"
+                                isActive ? "md:scale-105 z-20" : "opacity-60 hover:opacity-100 hover:scale-100 z-10"
                             )}
                             onMouseEnter={() => setActiveStep(index)}
                         >
@@ -152,12 +152,13 @@ export function NeuralPipeline() {
 
                                 {/* Description with reveal animation */}
                                 {/* Description with reveal animation */}
+                                {/* Description with reveal animation */}
                                 <div className={cn(
                                     "overflow-hidden transition-all duration-500 ease-out",
-                                    isActive ? "max-h-20 opacity-100 translate-y-0" : "max-h-0 md:max-h-0 opacity-0 md:opacity-0 -translate-y-2 md:-translate-y-2 block md:hidden max-h-20 opacity-100 translate-y-0" // Always show on mobile to prevent jump
+                                    isActive ? "max-h-20 opacity-100 translate-y-0" : "max-h-0 md:max-h-0 opacity-0 md:opacity-0 -translate-y-2 md:-translate-y-2 block md:hidden max-h-20 opacity-100 translate-y-0"
                                 )}>
                                     <p className={cn(
-                                        "text-sm font-medium max-w-[200px] mx-auto leading-relaxed",
+                                        "text-sm font-medium max-w-[200px] mx-auto leading-relaxed min-h-[3rem] flex items-center justify-center", // Added min-h-[3rem]
                                         isActive ? "text-gray-400" : "text-gray-600 md:text-gray-400"
                                     )}>
                                         {step.description}

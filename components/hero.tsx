@@ -91,6 +91,7 @@ function ParticleBackground() {
 }
 
 import { HeroPreviewDashboard } from "./hero-preview-dashboard"
+import { MobileHeroDashboard } from "./mobile-hero-dashboard"
 
 export function Hero() {
   const [showAuditModal, setShowAuditModal] = useState(false)
@@ -153,7 +154,12 @@ export function Hero() {
 
             <div className="pt-16 animate-float">
               <div className="relative max-w-4xl mx-auto">
-                <HeroPreviewDashboard />
+                <div className="hidden md:block">
+                  <HeroPreviewDashboard />
+                </div>
+                <div className="md:hidden">
+                  <MobileHeroDashboard />
+                </div>
               </div>
             </div>
           </div>
