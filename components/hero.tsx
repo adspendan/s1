@@ -111,7 +111,7 @@ export function Hero() {
               <span>The Autonomous Ads Operator</span>
             </div>
 
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance">
+            <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance">
               Run Your Ads On <span className="text-primary">Autopilot</span>
             </h1>
 

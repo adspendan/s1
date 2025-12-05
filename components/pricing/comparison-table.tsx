@@ -23,6 +23,9 @@ export function ComparisonTable() {
                     {/* Glow */}
                     <div className="absolute top-0 left-3/4 w-64 h-64 bg-[#C1FF72] rounded-full blur-[120px] opacity-10 pointer-events-none" />
 
+                    {/* Mobile Scroll Fade Indicator */}
+                    <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#050708] to-transparent z-10 pointer-events-none md:hidden" />
+
                     <div className="grid grid-cols-4 gap-px bg-white/5 rounded-[28px] overflow-hidden border border-white/5">
                         {/* Header Row */}
                         <div className="col-span-4 grid grid-cols-4 bg-white/5">
