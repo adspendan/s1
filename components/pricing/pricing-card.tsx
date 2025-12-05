@@ -36,7 +36,7 @@ export function PricingCard({ plan, isAnnual }: PricingCardProps) {
                 }`}
             spotlightColor={plan.highlight ? "rgba(193, 255, 114, 0.15)" : "rgba(255, 255, 255, 0.05)"}
         >
-            <div className="flex flex-col h-full bg-[#050708]/90 backdrop-blur-xl rounded-[30px] p-8 border border-white/5 relative overflow-hidden">
+            <div className="flex flex-col h-full bg-[#050708]/90 backdrop-blur-xl rounded-[30px] p-6 md:p-8 border border-white/5 relative overflow-hidden">
                 {/* Highlight Glow */}
                 {plan.highlight && (
                     <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#C1FF72] rounded-full blur-[80px] opacity-20 pointer-events-none" />

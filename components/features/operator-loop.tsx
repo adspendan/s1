@@ -43,6 +43,9 @@ export function OperatorLoop() {
                     {/* Connecting Line (Desktop) */}
                     <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0" />
 
+                    {/* Connecting Line (Mobile) */}
+                    <div className="md:hidden absolute top-[10%] bottom-[10%] left-1/2 w-0.5 -translate-x-1/2 bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0" />
+
                     {steps.map((step, index) => (
                         <ScrollReveal key={step.title} delay={index * 100}>
                             <div className="relative flex flex-col items-center text-center group">
