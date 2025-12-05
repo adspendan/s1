@@ -39,7 +39,7 @@ export function HeroPreviewDashboard() {
     }, [])
 
     return (
-        <div className="w-full aspect-[16/9] bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-4 flex flex-col gap-4 shadow-2xl relative overflow-hidden group hover:shadow-[0_0_60px_-15px_rgba(193,255,114,0.2)] transition-all duration-500">
+        <div className="w-full aspect-auto md:aspect-[16/9] min-h-[400px] md:min-h-0 bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-4 flex flex-col gap-4 shadow-2xl relative overflow-hidden group hover:shadow-[0_0_60px_-15px_rgba(193,255,114,0.2)] transition-all duration-500">
             {/* Header: Logo & Status */}
             <div className="flex items-center justify-between relative z-10 border-b border-white/5 pb-4">
                 <div className="flex items-center gap-4">
@@ -74,7 +74,7 @@ export function HeroPreviewDashboard() {
             </div>
 
             {/* TOP ROW: 5 KPIs */}
-            <div className="grid grid-cols-5 gap-3 relative z-10">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 relative z-10">
                 {[
                     { label: "ROAS", value: "4.2x", change: "+12%", icon: TrendingUp },
                     { label: "Spend", value: "$24.5k", change: "On pace", icon: DollarSign },
@@ -84,7 +84,10 @@ export function HeroPreviewDashboard() {
                 ].map((kpi, i) => (
                     <div
                         key={i}
-                        className="bg-secondary/50 border border-border rounded-xl p-3 hover:bg-primary/5 hover:border-primary/30 transition-all duration-300 group/card cursor-default relative overflow-hidden"
+                        className={cn(
+                            "bg-secondary/50 border border-border rounded-xl p-3 hover:bg-primary/5 hover:border-primary/30 transition-all duration-300 group/card cursor-default relative overflow-hidden",
+                            i > 1 ? "hidden sm:block" : "" // Show only first 2 KPIs on mobile
+                        )}
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover/card:opacity-100 transition-opacity" />
                         <div className="flex items-start justify-between mb-2 relative">
@@ -103,13 +106,12 @@ export function HeroPreviewDashboard() {
             </div>
 
             {/* MIDDLE: Active Operator Loop & Chart */}
-            <div className="flex-1 grid grid-cols-3 gap-4 relative z-10 min-h-0">
-                {/* Left: Operator Loop Visualization */}
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10 min-h-0">
                 {/* Left: Operator Loop Visualization */}
                 <div
                     ref={containerRef}
                     className={cn(
-                        "col-span-2 bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-center relative group/loop transition-all duration-1000",
+                        "col-span-1 md:col-span-2 bg-white/5 border border-white/5 rounded-xl p-4 flex flex-col justify-center relative group/loop transition-all duration-1000 min-h-[200px]",
                         isInView ? "shadow-[0_0_50px_-20px_rgba(193,255,114,0.3)] border-primary/20" : ""
                     )}
                 >
@@ -117,7 +119,7 @@ export function HeroPreviewDashboard() {
                 </div>
 
                 {/* Right: Live Operator Terminal */}
-                <div className="col-span-1 h-full min-h-[200px]">
+                <div className="col-span-1 h-full min-h-[200px] hidden md:block">
                     <OperatorTerminal />
                 </div>
             </div>

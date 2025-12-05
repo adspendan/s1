@@ -151,11 +151,15 @@ export function NeuralPipeline() {
                                 </h3>
 
                                 {/* Description with reveal animation */}
+                                {/* Description with reveal animation */}
                                 <div className={cn(
                                     "overflow-hidden transition-all duration-500 ease-out",
-                                    isActive ? "max-h-20 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-2"
+                                    isActive ? "max-h-20 opacity-100 translate-y-0" : "max-h-0 md:max-h-0 opacity-0 md:opacity-0 -translate-y-2 md:-translate-y-2 block md:hidden max-h-20 opacity-100 translate-y-0" // Always show on mobile to prevent jump
                                 )}>
-                                    <p className="text-sm text-gray-400 font-medium max-w-[200px] mx-auto leading-relaxed">
+                                    <p className={cn(
+                                        "text-sm font-medium max-w-[200px] mx-auto leading-relaxed",
+                                        isActive ? "text-gray-400" : "text-gray-600 md:text-gray-400"
+                                    )}>
                                         {step.description}
                                     </p>
                                 </div>

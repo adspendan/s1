@@ -10,6 +10,7 @@ import { OperatorTelemetry } from "@/components/operator-proof/operator-telemetr
 import { OperatorFootprints } from "@/components/operator-proof/operator-footprints"
 import { RedactedActions } from "@/components/operator-proof/redacted-actions"
 import { ActivateOperator } from "@/components/activate-operator"
+import { MobileAppSection } from "@/components/mobile-app-section"
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <HowItWorks />
       <ValuePillars />
       <SupportedPlatforms />
+      <MobileAppSection />
       <LeadMagnets />
       <OperatorTelemetry />
       <OperatorFootprints />

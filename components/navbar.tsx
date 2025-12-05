@@ -78,7 +78,7 @@ export function Navbar() {
         backdropFilter: backdropBlur,
         borderBottom: `1px solid rgba(var(--border), ${borderOpacity})`,
       }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 md:py-4"
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 z-50 relative" onClick={() => setIsMobileMenuOpen(false)}>
